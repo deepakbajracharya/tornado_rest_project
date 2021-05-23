@@ -3,6 +3,6 @@ def widget2Dict(widget):
         "id"              : widget.id,
         "name"            : widget.name,
         "number_of_parts" : widget.number_of_parts,
-        "created_date"    : widget.number_of_parts,
-        "updated_date"    : widget.number_of_parts
+        "created_date"    : widget.created_date.isoformat(),
+        "updated_date"    : widget.updated_date.isoformat()
     }

@@ -36,6 +36,10 @@ class WidgetService:
     async def deleteWidgetById(self, widget_id: int) -> int:
         return self.deleteWidgetByIdSync(widget_id)
 
+    def validateWidget(self, widget: Widget):
+        if not widget.isValid():
+            raise Exception(widget.errorMessages())
+
     def updateWidgetSync(self, widget_id: int, data: {}) -> Widget:
         if data:
             with Session(bind=self.engine) as session:
@@ -47,6 +51,7 @@ class WidgetService:
                                 'name', 'number_of_parts']]:
                         setattr(widget, key, data[key])
 
+                    self.validateWidget(widget)
                     session.commit()
                     widget = session.query(Widget).filter(
                         Widget.id == widget_id).one()
@@ -67,6 +72,7 @@ class WidgetService:
 
     def newWidgetSync(self, widget: Widget) -> int:
         with Session(bind=self.engine) as session:
+            self.validateWidget(widget)
             session.add(widget)
             session.commit()
             return widget.id
