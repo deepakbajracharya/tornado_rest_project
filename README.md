@@ -64,7 +64,10 @@ curl curl http://localhost:8888/widgets
 ```
 
 2. Adding a new widget.
+
+```
 curl  http://localhost:8888/widgets -H "Content-Type: application/json" -d '{"name": "shiny widget", "number_of_parts": 3245}'
+```
 
 
 
@@ -82,7 +85,7 @@ In the above command, replace __<id>__ with the id of the widget.
 curl -X DELETE http://localhost:8888/widgets/<id>
 ```
 The widget will be deleted if it exists otherwise it errors out (HTTP 500).
-```
+
 
 5. Updating the widget.
 ```
