@@ -1,0 +1,10 @@
+apispec==4.4.1
+apispec-webframeworks==0.5.2
+black==21.5b1
+flake8==3.9.2
+marshmallow==3.12.1
+SQLAlchemy==1.4.15
+SQLAlchemy-Utils==0.37.3
+swagger-ui-py==0.3.0
+tornado==6.1
+
