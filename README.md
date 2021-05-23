@@ -102,3 +102,6 @@ To create an object, POST is used.
 
 7. Object validation
 The __SQLite__ does not enforce max-length validation. The validation is implemented in the service. On validation, there will be HTTP 500 error.
+
+8. Open API
+The Open API (former Swagger UI) can be accesed at http://localhost:8888/api/doc.
