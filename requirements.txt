@@ -1,5 +1,6 @@
 apispec==4.4.1
 apispec-webframeworks==0.5.2
+bandit==1.7.0
 black==21.5b1
 flake8==3.9.2
 marshmallow==3.12.1
